@@ -9,3 +9,7 @@ First Original React Project
 Welcome.
 
 ----------------------------------
+
+Setup. npm install
+
+----------------------------------
