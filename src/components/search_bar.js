@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 export default class SearchBar extends Component {
-  constructor(props) {
-    super(props); // because it is a container it setState with new values
-  }
+  //  constructor(props) {
+  //  super(props); // because it is a container it setState with new values
+  //  }
   render() {
     return (
       <form className="input-group">

@@ -4,7 +4,7 @@ import rootReducer from './reducers/index';
 
 export default initialState => (
   createStore(rootReducer,
-  initialState,
-  // applyMiddleware(thunk)
+  initialState
+  //applyMiddleware(thunk)
   )
 );
