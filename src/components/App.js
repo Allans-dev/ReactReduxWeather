@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchBar from '../containers/searchBar';
-import LocationTable from '../containers/location_table';
+import SearchBar from '../containers/search_bar';
+import LocationTable from './location_table';
 
 
 export default class App extends Component {

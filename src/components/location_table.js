@@ -9,7 +9,7 @@ export default class LocationTable extends Component {
       <table className="table table-hover">
         <thead>
           <tr>
-            <th>City</th>
+            <th>Location</th>
             <th>Forecast</th>
           </tr>
         </thead>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   //  constructor(props) {
   //  super(props); // because it is a container it setState with new values
   //  }
@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
     return (
       <form className="input-group">
         <input
-          placeholder="Enter City"
+          placeholder="Enter Location"
           className="form-control"
         />
         <span className="input-group-btn">
@@ -19,3 +19,13 @@ export default class SearchBar extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
