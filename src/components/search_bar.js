@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
     return (
       <form className="input-group">
         <input
-          placeholder="Enter Location"
+          placeholder="Enter City"
           className="form-control"
         />
         <span className="input-group-btn">
