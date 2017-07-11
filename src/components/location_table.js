@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default class LocationTable extends Component {
-
-
-  render() {
+const LocationTable = (props) => {
     return (
       <table className="table table-hover">
         <thead>
@@ -18,5 +15,6 @@ export default class LocationTable extends Component {
         </tbody>
       </table>
     );
-  }
 }
+
+export default LocationTable;
