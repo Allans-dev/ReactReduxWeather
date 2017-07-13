@@ -6,4 +6,4 @@ const weatherData = (state = 'no weather data', action) => {
     return state;
 }
 
-export default locationForecast;
+export default weatherData;
