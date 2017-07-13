@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class SearchBar extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
+
   }
 
   render() {
@@ -42,7 +45,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  return bindActionCreators ({ fetchWeather }, dispatch);
 });
 
 
