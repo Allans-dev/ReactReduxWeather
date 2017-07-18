@@ -1,4 +1,7 @@
-const weatherData = (state = 'no weather data', action) => {
+import { FETCH_WEATHER } from '../actions';
+
+
+const weatherData = (state = [] , action) => {
     switch (action.type) {
       case 'FETCH_WEATHER':
         return [action.payload.data, ...state];

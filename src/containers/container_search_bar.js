@@ -13,14 +13,19 @@ class SearchBar extends Component {
     // 'this' in onInputChange function refers to window without bind (lexical environment)
     // needs to do that for all callbacks
     // replaces 'this'.
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+    // similar to above passes 'this' with ability to reference props to onFormSubmit function
   }
 
   onInputChange(event) {
-    this.setState({ term: event.target.value }); // sets state of SearchBar to input value
+    this.setState({ term: event.target.value }); // sets state 'term' of SearchBar to input value
   }
 
   onFormSubmit(event) {
     event.preventDefault();
+    // where the magic happens
+    this.props.fetchWeather(this.state.term, 'au');
+    this.setState({ term: '' });
 
   }
 
@@ -40,12 +45,9 @@ class SearchBar extends Component {
     );
   }
 }
-const mapStateToProps = state => ({
 
-});
-
-const mapDispatchToProps = dispatch => ({
-  return bindActionCreators ({ fetchWeather }, dispatch);
+const mapDispatchToProps = ({ weather }) => ({
+  dispatch(weather);
 });
 
 
