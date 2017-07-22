@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import LocationBrief from '../containers/location_brief';
 
 const LocationTable = (props) => {
     return (
@@ -11,7 +12,7 @@ const LocationTable = (props) => {
           </tr>
         </thead>
         <tbody>
-
+          <LocationBrief />
         </tbody>
       </table>
     );
