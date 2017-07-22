@@ -25,6 +25,7 @@ class SearchBar extends Component {
     event.preventDefault();
     // where the magic happens
     this.props.fetchWeather(this.state.term, 'au');
+    console.log(this.props.fetchWeather(this.state.term, 'au'));
     this.setState({ term: '' });
 
   }
@@ -46,9 +47,9 @@ class SearchBar extends Component {
   }
 }
 
-const mapDispatchToProps = ({ weather }) => ({
-  dispatch(weather);
-});
+function mapDispatchToProps (state, ownProps) {
+  return { fetchWeather };
+};
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
