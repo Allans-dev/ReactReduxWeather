@@ -6,20 +6,23 @@ class LocationBrief extends Component {
     const name = cityData.city.name;
 
     return (
-      <tr key={name}>
-        <td> {name} </td>
-      </tr>
-    )
+      // <tr key={name}>
+      //   <td> {name} </td>
+      // </tr>
+      "Please work"
+    );
   }
   render() {
-    return ( <renderBrief /> );
+    console.log(this.props.weather)
+    return <renderBrief />;
   }
+
 }
 
-// function mapStateToProps(state, ownProps) {
-//   return ;
-// }
-//
-// export default connect(mapStateToProps)(LocationBrief);
 
-export default LocationBrief;
+
+function mapStateToProps(state, ownProps) {
+  return { weather:state.weather };
+}
+
+export default connect(mapStateToProps)(LocationBrief);
