@@ -14,3 +14,46 @@ export function fetchWeather(city) {
     payload: request
   }
 };
+
+// -----------------------------------------
+// REACT ES2017 APPROACH
+// -----------------------------------------
+
+// customize HTTP request:
+
+// fetch('https://mywebsite.com/endpoint/', {
+//   method: 'POST',
+//   headers: {
+//     'Accept': 'application/json',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     firstParam: 'yourValue',
+//     secondParam: 'yourOtherValue',
+//   })
+// })
+
+// Handling response
+
+// function getMoviesFromApiAsync() {
+//   return fetch('https://facebook.github.io/react-native/movies.json')
+//     .then((response) => response.json())
+//     .then((responseJson) => {
+//       return responseJson.movies;
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// }
+
+// Still a promise so using ES2017 "await" removes the need of redux-promise
+
+// async function getMoviesFromApi() {
+//   try {
+//     let response = await fetch('https://facebook.github.io/react-native/movies.json');
+//     let responseJson = await response.json();
+//     return responseJson.movies;
+//   } catch(error) {
+//     console.error(error);
+//   }
+// }
