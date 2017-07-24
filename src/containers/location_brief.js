@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class LocationBrief extends Component {
-  renderBrief(cityData) {
-    const name = cityData.city.name;
+  renderBrief(locationData) {
+    const name = locationData.city.name;
 
-    return ( {name} );
+    return (
+      <div key={name}> {name} </div>
+    );
   }
+
   render() {
     return (
       <div>
-        <renderBrief />
+        {this.props.weather.map(this.renderBrief)}
       </div>
     )
   }
@@ -19,8 +22,8 @@ class LocationBrief extends Component {
 
 
 
-function mapStateToProps(state, ownProps) {
-  return { weather: state.weather };
+function mapStateToProps({ weather }) {
+  return { weather };
 }
 
 export default connect(mapStateToProps)(LocationBrief);
