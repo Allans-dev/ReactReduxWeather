@@ -5,16 +5,14 @@ class LocationBrief extends Component {
   renderBrief(cityData) {
     const name = cityData.city.name;
 
-    return (
-      // <tr key={name}>
-      //   <td> {name} </td>
-      // </tr>
-      "Please work"
-    );
+    return ( {name} );
   }
   render() {
-    console.log(this.props.weather)
-    return <renderBrief />;
+    return (
+      <div>
+        <renderBrief />
+      </div>
+    )
   }
 
 }
@@ -22,7 +20,7 @@ class LocationBrief extends Component {
 
 
 function mapStateToProps(state, ownProps) {
-  return { weather:state.weather };
+  return { weather: state.weather };
 }
 
 export default connect(mapStateToProps)(LocationBrief);
