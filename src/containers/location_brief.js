@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class LocationBrief extends Component {
   renderBrief(locationData) {
     const name = locationData.city.name;
-
     return (
       <div key={name}> {name} </div>
     );
@@ -15,7 +14,7 @@ class LocationBrief extends Component {
       <div>
         {this.props.weather.map(this.renderBrief)}
       </div>
-    )
+    );
   }
 
 }

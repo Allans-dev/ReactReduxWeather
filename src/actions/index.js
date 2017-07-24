@@ -16,7 +16,7 @@ export function fetchWeather(city) {
 };
 
 // -----------------------------------------
-// REACT ES2017 APPROACH
+// REACT ES2017 FETCH APPROACH
 // -----------------------------------------
 
 // customize HTTP request:
