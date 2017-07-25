@@ -1,5 +1,20 @@
+/* -----------------------
+   GLOBAL
+   ----------------------- */
+* {
+  border: 1px solid black;
+}
+
 .container-fluid {
   max-width: 1140px;
   margin: 0 auto;
   position: relative;
+}
+
+/* -----------------------
+   LOCATION_BRIEF
+   ----------------------- */
+
+.cityName {
+
 }
