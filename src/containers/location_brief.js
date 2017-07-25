@@ -5,11 +5,11 @@ class LocationBrief extends Component {
 
   renderBrief(locationData) {
     const name = locationData.city.name;
-    const dayOne = locationData.list[4];
-    const dayTwo = locationData.list[12];
-    const dayThree = locationData.list[20];
-    const dayFour = locationData.list[28];
-    const dayFive = locationData.list[36];
+    const dayOne = locationData.list[2];
+    const dayTwo = locationData.list[10];
+    const dayThree = locationData.list[18];
+    const dayFour = locationData.list[26];
+    const dayFive = locationData.list[34];
 
     const forecastArr = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
@@ -19,11 +19,11 @@ class LocationBrief extends Component {
         <div className="col-md-2 col-sm-2 cityName">
           {name}
         </div>
-        {forecastArr.map(function(des){
+        {forecastArr.map(function(day){
           return (
-            <div key={des.dt_txt} className="col-md-2 col-sm-2">
-              {des.dt_txt} <br />
-              {des.weather[0].description}
+            <div key={day.dt_txt} className="col-md-2 col-sm-2">
+              {day.dt_txt} <br />
+              {day.weather[0].description}
             </div>
           );
         })}
