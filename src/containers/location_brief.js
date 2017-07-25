@@ -15,7 +15,7 @@ class LocationBrief extends Component {
 
 
     return (
-      <div key={name}>
+      <div key={name} className="row">
         <div className="col-md-2 col-sm-2 cityName">
           {name}
         </div>
@@ -33,8 +33,8 @@ class LocationBrief extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.weather.map(this.renderBrief)}
+      <div className="locationBrief">
+          {this.props.weather.map(this.renderBrief)}
       </div>
     );
   }
