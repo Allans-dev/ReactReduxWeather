@@ -16,6 +16,15 @@ class LocationBrief extends Component {
     // array to map forecast for each location
     const forecastArr = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
+    // converting timestamp to weekday
+    const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    function weekDayFunction (date) {
+      let dateNo = new Date(date.slice(0, 10));
+      let dayNo = dateNo.getDay();
+      return weekDay[dayNo];
+    }
+
 
     return (
       <div key={name} className="row">
@@ -25,7 +34,8 @@ class LocationBrief extends Component {
         {forecastArr.map(function(day){
           return (
             <div key={day.dt_txt} className="col-md-2 col-sm-2">
-              {day.dt_txt} <br />
+              {weekDayFunction(day.dt_txt)}
+              <br />
               {day.weather[0].description}
             </div>
           );
