@@ -17,17 +17,18 @@ class LocationBrief extends Component {
     const forecastArr = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
     // converting timestamp to weekday
-    const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
     function weekDayFunction (date) {
+      const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       let dateNo = new Date(date.slice(0, 10));
-      let dayNo = dateNo.getDay();
-      return weekDay[dayNo];
+      return weekDay[dateNo.getDay()];
     }
 
+    function tempUnits (k) {
+      return Math.round(k - 273.15);
+    }
 
     return (
-      <div key={name} className="row">
+      <div key={name} className="row briefItem">
         <div className="col-md-2 col-sm-2 cityName">
           {name}
         </div>
@@ -35,6 +36,8 @@ class LocationBrief extends Component {
           return (
             <div key={day.dt_txt} className="col-md-2 col-sm-2">
               {weekDayFunction(day.dt_txt)}
+              <br />
+              {tempUnits(day.main.temp)} &#8451;
               <br />
               {day.weather[0].description}
             </div>

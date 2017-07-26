@@ -5,16 +5,28 @@
   border: 1px solid black;
 }*/
 
-.container-fluid {
-  max-width: 1140px;
-  margin: 0 auto;
-  position: relative;
-}
+  .container-fluid {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+/* -----------------------
+   SEARCH_BAR
+   ----------------------- */
+
+   .searchBar {
+     margin-top: 15px;
+   }
 
 /* -----------------------
    LOCATION_BRIEF
    ----------------------- */
 
-.locationBrief {
+  .locationBrief {
+    margin-top: 15px;
+  }
 
-}
+  .briefItem {
+    padding: 10px 0;
+  }
