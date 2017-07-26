@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SearchBar from '../containers/search_bar';
+import Header from './header';
 import LocationTable from './location_table';
+import SearchBar from '../containers/search_bar';
 
 
 
