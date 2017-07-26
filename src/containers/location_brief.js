@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 class LocationBrief extends Component {
 
+// each location will render a renderBrief which will display a static name and a mapped forecast
   renderBrief(locationData) {
+
     const name = locationData.city.name;
     const dayOne = locationData.list[2];
     const dayTwo = locationData.list[10];
@@ -11,6 +13,7 @@ class LocationBrief extends Component {
     const dayFour = locationData.list[26];
     const dayFive = locationData.list[34];
 
+    // array to map forecast for each location
     const forecastArr = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
 

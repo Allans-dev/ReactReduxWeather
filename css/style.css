@@ -1,9 +1,9 @@
 /* -----------------------
    GLOBAL
    ----------------------- */
-* {
+/** {
   border: 1px solid black;
-}
+}*/
 
 .container-fluid {
   max-width: 1140px;
