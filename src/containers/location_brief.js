@@ -23,6 +23,7 @@ class LocationBrief extends Component {
       return weekDay[dateNo.getDay()];
     }
 
+    // converting temperature
     function tempUnits (k) {
       return Math.round(k - 273.15);
     }
