@@ -5,21 +5,28 @@ import { fetchCountry, setCountryCode } from '../actions/countries';
 
 
 class CountrySelector extends Component {
-  componentWillMount() {
-    this.props.fetchCountry();
+  constructor(props) {
+    super(props);
     this.props.setCountryCode();
   }
 
-  constructor(props) {
-    super(props);
+  optionList() {
+    this.props.fetchCountry()
+    .then(() => {
+      this.props.countryList[0].map((country) => {
+        return (
+          <option value={country.alpha2Code}>{country.name}</option>
+        );
+      })
+    });
   }
 
   render() {
     return (
       <form>
         <select>
-          <option value="default">Country</option>
-
+          <option value="au">Australia</option>
+          {this.optionList()}
         </select>
       </form>
     );

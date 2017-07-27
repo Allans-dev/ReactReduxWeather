@@ -1,6 +1,6 @@
 import { SELECT_COUNTRY } from '../actions/countries';
 
-const SelectedCountry = (state = "au", action) => {
+const selectedCountry = (state = "au", action) => {
   switch (action.type) {
     case "SELECT_COUNTRY":
       return action.payload;
@@ -8,4 +8,4 @@ const SelectedCountry = (state = "au", action) => {
   return state;
 }
 
-export default SelectedCountry;
+export default selectedCountry;
