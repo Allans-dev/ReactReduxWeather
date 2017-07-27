@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCountry } from '../actions/countries';
+import { fetchCountry, setCountryCode } from '../actions/countries';
 
 
 class CountrySelector extends Component {
   componentWillMount() {
     this.props.fetchCountry();
+    this.props.setCountryCode();
   }
 
   constructor(props) {
@@ -18,14 +19,15 @@ class CountrySelector extends Component {
       <form>
         <select>
           <option value="default">Country</option>
+
         </select>
       </form>
     );
   }
 }
 
-function mapStateToProps ({ country }) {
-  return { country };
+function mapStateToProps ({ countryList }) {
+  return { countryList };
   // return object to be passed into component as props
   // will obtain country state tb created
 }

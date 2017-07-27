@@ -11,3 +11,12 @@ export function fetchCountry(code) {
     payload: request
   };
 }
+
+export const SELECT_COUNTRY = "SELECT_COUNTRY";
+
+export function setCountryCode(countryCode) {
+  return {
+    type: SELECT_COUNTRY,
+    payload: countryCode
+  };
+}
