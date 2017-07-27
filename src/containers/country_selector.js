@@ -33,7 +33,7 @@ function mapStateToProps ({ countryList }) {
 }
 
 function mapDispatchToProps (dispatch, ownProps){
-  return bindActionCreators({ fetchCountry }, dispatch); // will create countrySelector action
+  return bindActionCreators({ fetchCountry, setCountryCode }, dispatch); // will create countrySelector action
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountrySelector);
