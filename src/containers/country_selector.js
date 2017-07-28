@@ -4,31 +4,34 @@ import { bindActionCreators } from 'redux';
 import { fetchCountry, setCountryCode } from '../actions/countries';
 
 
+
 class CountrySelector extends Component {
   constructor(props) {
     super(props);
     this.props.setCountryCode();
+    this.props.fetchCountry();
   }
 
-  optionList() {
-    this.props.fetchCountry()
-    .then(() => {
-      this.props.countryList[0].map((country) => {
-        return (
-          <option value={country.alpha2Code}>{country.name}</option>
-        );
-      })
-    });
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.countryList[0]) {
+      return (
+        this.props.countryList[0].map((country) => {
+          return (
+            <option key={country.name} value={country.alpha2Code}>{country.name}</option>
+          );
+        })
+      );
+    }
   }
+
+  // const setCountryCode = this.props.setCountryCode(this.value);
 
   render() {
     return (
-      <form>
         <select>
           <option value="au">Australia</option>
-          {this.optionList()}
+          {this.componentDidUpdate()}
         </select>
-      </form>
     );
   }
 }
