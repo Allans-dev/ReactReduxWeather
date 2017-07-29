@@ -26,11 +26,12 @@ class LocationBrief extends Component {
     return (
       <div key={name} className="row briefItem">
         <div className="col-md-2 col-sm-2 cityName">
-          {name}
+          {name} <br />
+          <button className="btn btn-danger btn-xs">X</button>
         </div>
         {forecastArr.map(function(day){
           return (
-            <div key={day.dt_txt} className="col-md-2 col-sm-2">
+            <div key={day.dt_txt} className="col-md-2 col-sm-2 forecastItem">
               {weekDayFunction(day.dt_txt)}
               <br />
               {Math.round(day.main.temp)} &#8451;

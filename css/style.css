@@ -42,3 +42,14 @@
   .briefItem {
     padding: 10px 0;
   }
+
+  .cityName button {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+  }
+
+  .forecastItem,
+  .cityName {
+    height: 60px;
+  }
