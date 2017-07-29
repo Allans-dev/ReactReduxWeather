@@ -8,8 +8,7 @@ class LocationBrief extends Component {
 
     const name = locationData.city.name;
 
-    // array to map forecast for each location
-
+    // array to map forecast at noon for each location
     const forecastArr = locationData.list.filter( function(item, index) {
       let time = item.dt_txt.slice(11);
       const noon = "12:00:00"
@@ -55,8 +54,6 @@ class LocationBrief extends Component {
   }
 
 }
-
-
 
 function mapStateToProps({ weather }) {
   return { weather };

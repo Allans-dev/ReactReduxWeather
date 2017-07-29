@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCountry, setCountryCode } from '../actions/countries';
+import { fetchCountries, setCountryCode } from '../actions/countries';
 
 
 // function countryCode (country) {
@@ -13,7 +13,7 @@ class CountrySelector extends Component {
     super(props);
     this.props.setCountryCode();
     this.state = { value: 'AU' };
-    this.props.fetchCountry();
+    this.props.fetchCountries();
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -33,8 +33,6 @@ class CountrySelector extends Component {
      this.props.setCountryCode(event.target.value);
    }
 
-// <option>Select Country</option>
-
   render() {
     return (
         <select defaultValue={this.state.value} onChange={this.handleChange}>
@@ -51,7 +49,7 @@ function mapStateToProps ({ countryList }) {
 }
 
 function mapDispatchToProps (dispatch, ownProps){
-  return bindActionCreators({ fetchCountry, setCountryCode }, dispatch); // will create countrySelector action
+  return bindActionCreators({ fetchCountries, setCountryCode }, dispatch); // will create countrySelector action
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountrySelector);

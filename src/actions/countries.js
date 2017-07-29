@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-export const FETCH_COUNTRY = "FETCH_COUNTRY";
+export const FETCH_COUNTRIES = "FETCH_COUNTRIES";
 
-export function fetchCountry(code) {
+export function fetchCountries(code) {
   const url = "https://restcountries.eu/rest/v2/all";
   const request = axios.get(url);
   return {
-    type: FETCH_COUNTRY,
+    type: FETCH_COUNTRIES,
     payload: request
   };
 }

@@ -1,8 +1,8 @@
-import { FETCH_COUNTRY } from '../actions/countries';
+import { FETCH_COUNTRIES } from '../actions/countries';
 
 const countryData = (state = [], action) => {
     switch (action.type) {
-      case 'FETCH_COUNTRY':
+      case 'FETCH_COUNTRIES':
         return [action.payload.data];
     }
     return state;
