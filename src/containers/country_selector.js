@@ -4,12 +4,17 @@ import { bindActionCreators } from 'redux';
 import { fetchCountry, setCountryCode } from '../actions/countries';
 
 
+// function countryCode (country) {
+//   return setCountryCode(country);
+// }
 
 class CountrySelector extends Component {
   constructor(props) {
     super(props);
     this.props.setCountryCode();
+    this.state = { value: 'AU' };
     this.props.fetchCountry();
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -24,12 +29,15 @@ class CountrySelector extends Component {
     }
   }
 
-  // const setCountryCode = this.props.setCountryCode(this.value);
+ handleChange(event) {
+     this.props.setCountryCode(event.target.value);
+   }
+
+// <option>Select Country</option>
 
   render() {
     return (
-        <select>
-          <option value="au">Australia</option>
+        <select defaultValue={this.state.value} onChange={this.handleChange}>
           {this.componentDidUpdate()}
         </select>
     );

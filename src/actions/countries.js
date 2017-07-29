@@ -13,7 +13,7 @@ export function fetchCountry(code) {
 
 export const SELECT_COUNTRY = "SELECT_COUNTRY";
 
-export function setCountryCode(countryCode = "au") {
+export function setCountryCode(countryCode = "AU") {
   return {
     type: SELECT_COUNTRY,
     payload: countryCode
