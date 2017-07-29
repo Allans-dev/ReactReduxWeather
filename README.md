@@ -25,9 +25,9 @@ Start with npm start
 
 ----------------------------------
 
-Earth at a Snapshot
+Earth at noon
 
-The app let's the user search for a location anywhere in the world and return a five day forecast of the weather at the current time of each day.
+The app let's the user search for a location anywhere in the world and return a five day forecast of the weather at noon each day.
 On selecting the display a component will replace the other search results displaying detailed weather information.
 
 In the current wireframe it will have a temperature graph showing the temperature range for the next five days, as well as average. And other information available from openweather API.

@@ -7,14 +7,16 @@ class LocationBrief extends Component {
   renderBrief(locationData) {
 
     const name = locationData.city.name;
-    const dayOne = locationData.list[3];
-    const dayTwo = locationData.list[11];
-    const dayThree = locationData.list[19];
-    const dayFour = locationData.list[27];
-    const dayFive = locationData.list[35];
 
     // array to map forecast for each location
-    const forecastArr = [dayOne, dayTwo, dayThree, dayFour, dayFive];
+
+    const forecastArr = locationData.list.filter( function(item, index) {
+      let time = item.dt_txt.slice(11);
+      const noon = "12:00:00"
+      if (time === noon) {
+        return locationData.list[index];
+      }
+    });
 
     // converting timestamp to weekday
     function weekDayFunction (date) {
