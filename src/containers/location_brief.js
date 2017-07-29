@@ -7,11 +7,11 @@ class LocationBrief extends Component {
   renderBrief(locationData) {
 
     const name = locationData.city.name;
-    const dayOne = locationData.list[2];
-    const dayTwo = locationData.list[10];
-    const dayThree = locationData.list[18];
-    const dayFour = locationData.list[26];
-    const dayFive = locationData.list[34];
+    const dayOne = locationData.list[3];
+    const dayTwo = locationData.list[11];
+    const dayThree = locationData.list[19];
+    const dayFour = locationData.list[27];
+    const dayFive = locationData.list[35];
 
     // array to map forecast for each location
     const forecastArr = [dayOne, dayTwo, dayThree, dayFour, dayFive];
@@ -21,11 +21,6 @@ class LocationBrief extends Component {
       const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       let dateNo = new Date(date.slice(0, 10));
       return weekDay[dateNo.getDay()];
-    }
-
-    // converting temperature
-    function tempUnits (k) {
-      return Math.round(k - 273.15);
     }
 
     return (
@@ -38,7 +33,7 @@ class LocationBrief extends Component {
             <div key={day.dt_txt} className="col-md-2 col-sm-2">
               {weekDayFunction(day.dt_txt)}
               <br />
-              {tempUnits(day.main.temp)} &#8451;
+              {Math.round(day.main.temp)} &#8451;
               <br />
               {day.weather[0].description}
             </div>

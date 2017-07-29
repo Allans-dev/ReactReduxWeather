@@ -25,10 +25,9 @@ Start with npm start
 
 ----------------------------------
 
-Do I need an Umbrella for Lunch this Week?
+Earth at a Snapshot
 
-The app let's the user search for a location (currently in Australia and aiming to implement country selector in the next phase)
-and display the weather for the next five days at 12pm noon. It shows a snapshot weather description, icon and temperature.
+The app let's the user search for a location anywhere in the world and return a five day forecast of the weather at the current time of each day.
 On selecting the display a component will replace the other search results displaying detailed weather information.
 
 In the current wireframe it will have a temperature graph showing the temperature range for the next five days, as well as average. And other information available from openweather API.
