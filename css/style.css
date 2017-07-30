@@ -53,3 +53,7 @@
   .cityName {
     height: 60px;
   }
+
+  .forecastItem {
+    text-align: center;
+  }

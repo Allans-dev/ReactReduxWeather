@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import deleteLocation from '../actions/delete';
 
 class LocationBrief extends Component {
+  constructor(props) {
+    super(props);
+    this.renderBrief = this.renderBrief.bind(this);
+    this.filterIndex = this.filterIndex.bind(this);
+  }
+
+  // filterIndex(name) {
+  //   let id = this.props.weather.filter(function (item, index) {
+  //     if (item.city.name === name) {
+  //       return index;
+  //     }
+  //   });
+  //   console.log(id);
+  // }
 
 // each location will render a renderBrief which will display a static name and a mapped forecast
   renderBrief(locationData) {
 
-    const name = locationData.city.name;
+    const locationName = locationData.city.name;
 
     // array to map forecast at noon for each location
     const forecastArr = locationData.list.filter( function(item, index) {
@@ -24,11 +40,18 @@ class LocationBrief extends Component {
       return weekDay[dateNo.getDay()];
     }
 
+    // function onDelete(name) {
+    //   this.filterIndex(name);
+    // }
+    // onDelete(locationData.city.name);
     return (
       <div key={name} className="row briefItem">
         <div className="col-md-2 col-sm-2 cityName">
-          {name} <br />
-          <button className="btn btn-danger btn-xs">X</button>
+          {locationName} <br />
+          <button
+            className="btn btn-danger btn-xs"
+            onClick={this.onDelete}
+          >X</button>
         </div>
         {forecastArr.map(function(day){
           return (
@@ -59,4 +82,8 @@ function mapStateToProps({ weather }) {
   return { weather };
 }
 
-export default connect(mapStateToProps)(LocationBrief);
+function mapDispatchToProps(dispatch, ownProps) {
+  return bindActionCreators({ deleteLocation }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LocationBrief);
