@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCountries, setCountryCode } from '../actions/countries';
 
-
-// function countryCode (country) {
-//   return setCountryCode(country);
-// }
-
 class CountrySelector extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +12,7 @@ class CountrySelector extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  // renders dropdown menu items after countryList is added to state
   componentDidUpdate(prevProps, prevState) {
     if (this.props.countryList[0]) {
       return (
@@ -29,6 +25,7 @@ class CountrySelector extends Component {
     }
   }
 
+  // calls action to select the menu item in state
  handleChange(event) {
      this.props.setCountryCode(event.target.value);
    }
@@ -45,11 +42,10 @@ class CountrySelector extends Component {
 function mapStateToProps ({ countryList }) {
   return { countryList };
   // return object to be passed into component as props
-  // will obtain country state tb created
 }
 
 function mapDispatchToProps (dispatch, ownProps){
-  return bindActionCreators({ fetchCountries, setCountryCode }, dispatch); // will create countrySelector action
+  return bindActionCreators({ fetchCountries, setCountryCode }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountrySelector);

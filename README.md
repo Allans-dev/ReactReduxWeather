@@ -17,6 +17,10 @@ Shoutout to Scott Gangemi who helped get the ball rolling with my first componen
 
 ----------------------------------
 
+Install Dependencies
+
+----------------------------------
+
 Compile webpack
 
 ----------------------------------

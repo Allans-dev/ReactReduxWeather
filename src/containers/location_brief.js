@@ -10,6 +10,7 @@ class LocationBrief extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+// Delete button function button that passes name of location to action and reducer
   handleClick(e) {
     e.preventDefault();
     this.props.deleteLocation(e.target.value);
