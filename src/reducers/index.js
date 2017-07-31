@@ -8,7 +8,7 @@ import selectedCountry from './countrySelector';
 const rootReducer = combineReducers ({
   weather: weatherData,
   countryList: countryList,
-  country: selectedCountry
+  country: selectedCountry,
 // enter the reducer names
 })
 

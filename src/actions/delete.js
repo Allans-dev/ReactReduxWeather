@@ -1,9 +1,9 @@
 
-const DELETE_LOCATION = "DELETE_LOCATION";
+export const DELETE_LOCATION = "DELETE_LOCATION";
 
-export function deleteLocation (index) {
-  return (
+export function deleteLocation (name) {
+  return {
     type: DELETE_LOCATION,
-    payload: index
-  );
+    payload: name
+  };
 }
