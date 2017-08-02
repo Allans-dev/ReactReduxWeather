@@ -11,13 +11,26 @@
     position: relative;
   }
 
+
+  body {
+    background-color: #212121;
+    background-size: cover;
+    background-position: center;
+  }
+
+
 /* -----------------------
    BANNER
    ----------------------- */
 
+/*
    .banner {
-
+     background-image: url('../imgs/earthBanner.png');
+     background-position: center;
+     background-size: cover;
+     color: #eee;
    }
+*/
 
 /* -----------------------
    HEADER
@@ -28,7 +41,7 @@
    }
 
    select {
-     width: 100%;
+     width: 60%;
    }
 
 /* -----------------------

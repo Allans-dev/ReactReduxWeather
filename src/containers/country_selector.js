@@ -33,6 +33,7 @@ class CountrySelector extends Component {
   render() {
     return (
         <select defaultValue={this.state.value} onChange={this.handleChange}>
+          <option>Loading...</option>
           {this.componentDidUpdate()}
         </select>
     );

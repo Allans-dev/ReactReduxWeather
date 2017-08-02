@@ -33,4 +33,4 @@ Earth at noon
 
 The app let's the user search for a location anywhere in the world and return a five day forecast of the weather at noon each day.
 
-Option to delete forecast for location.
+Option to delete forecast for each location.
