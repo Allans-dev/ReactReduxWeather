@@ -31,6 +31,14 @@ class LocationBrief extends Component {
       }
     });
 
+    function displayIcon(weatherId) {
+      if (weatherId >= 200 && weatherId < 300) {
+        return ( <i className="wi wi-day-thunderstorm"></i> );
+      } else if (weatherId >= 500 && weatherId < 600) {
+        return ( <div><i className="wi wi-day-rain"></i><div/> );
+      } else { return ( <div>icon missing</div> ); }
+    }
+
     // converting timestamp to weekday
     function weekDayFunction (date) {
       const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -52,6 +60,8 @@ class LocationBrief extends Component {
           return (
             <div key={day.dt_txt} className="col-md-2 col-sm-2 forecastItem">
               {weekDayFunction(day.dt_txt)}
+              <br />
+              {displayIcon(day.weather[0].id)}
               <br />
               {Math.round(day.main.temp)} &#8451;
               <br />
