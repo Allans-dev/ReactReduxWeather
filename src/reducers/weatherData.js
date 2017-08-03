@@ -12,7 +12,9 @@ const weatherData = (state = [], action) => {
       // removes location data from weather object
       case 'DELETE_LOCATION':
         return state.filter(function (item, index){
-          if (action.payload !== item.city.name) {
+          console.log(action.payload);
+          console.log(item.city.id);
+          if (action.payload != item.city.id) {
             return [item];
           }
         })

@@ -7,9 +7,9 @@ import configureStore from './store';
 
 const store = configureStore();
 
-// store.subscribe(() => {
-//   console.log('index: ', store.getState());
-// });
+ store.subscribe(() => {
+   console.log('index: ', store.getState());
+ });
 
 ReactDOM.render(
   <Provider store={store}>

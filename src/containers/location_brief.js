@@ -20,6 +20,7 @@ class LocationBrief extends Component {
   renderBrief(locationData) {
 
     let locationName = locationData.city.name;
+    let locationId = locationData.city.id;
 
     // array to map forecast at noon for each location
     const forecastArr = locationData.list.filter( function(item, index) {
@@ -38,11 +39,11 @@ class LocationBrief extends Component {
     }
 
     return (
-      <div key={locationName} className="row briefItem">
+      <div key={locationId} className="row briefItem">
         <div className="col-md-2 col-sm-2 cityName">
           {locationName} <br />
           <button
-            value={locationName}
+            value={locationId}
             className="btn btn-danger btn-xs"
             onClick={this.handleClick}
           >X</button>
