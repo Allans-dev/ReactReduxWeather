@@ -69,12 +69,19 @@ class LocationBrief extends Component {
         let month = date.slice(5, 7);
         return (day + "/" + month);
     }
+             
+    function nameShorten (name) {
+        if (name.length > 11) {
+            let rename = name.slice(0, 11);
+            return rename + "...";
+        } else return name;
+    }
 
     return (
       <div key={locationId} className="briefItem">
         <div className="cityName">
         <div>
-          {locationName}
+          {nameShorten(locationName)}
         </div>
         </div>
         <button

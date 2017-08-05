@@ -1,5 +1,5 @@
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
 
     body {
         font-size: 14px;
@@ -41,10 +41,22 @@
     }
   }
 
+@media only screen and (max-width: 768px) {
+    
+    select {
+     width: 30%;
+   }   
+    
+}
+
 @media only screen and (max-width: 500px) {
     
     .cityName div {
         margin-left: 5px;
         margin-top: 140px;
+    }
+    
+    .forecastItem {
+        border-left: 2px solid;
     }
 }
