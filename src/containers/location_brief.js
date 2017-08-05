@@ -63,11 +63,19 @@ class LocationBrief extends Component {
       let dateNo = new Date(date.slice(0, 10));
       return weekDay[dateNo.getDay()];
     }
+             
+    function weekDateFunction (date) {
+        let day = date.slice(8,10);
+        let month = date.slice(5, 7);
+        return (day + "/" + month);
+    }
 
     return (
       <div key={locationId} className="briefItem">
         <div className="cityName">
-          {locationName} <br />
+        <div>
+          {locationName}
+        </div>
         </div>
         <button
             value={locationId}
@@ -77,8 +85,12 @@ class LocationBrief extends Component {
         {forecastArr.map(function(day){
           return (
             <div key={day.dt_txt} className="forecastItem">
+              <div className="dayDate">
               {weekDayFunction(day.dt_txt)}
-              <br />
+              </div>
+              <div className="dateDate">
+              {weekDateFunction(day.dt_txt)}
+              </div>
               {displayIcon(day.weather[0].id)}
               <br />
               {Math.round(day.main.temp)} &#8451;
