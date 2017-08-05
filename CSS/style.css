@@ -12,13 +12,13 @@
   }
 
 
-/*
   body {
     background-color: #212121;
     background-size: cover;
     background-position: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
   }
-*/
 
 
 /* -----------------------
@@ -31,6 +31,17 @@
      background-size: cover;
      color: #c7c7c7;
    }
+
+    h1 {
+     font-size: 350%;
+     font-weight: 200;
+    }
+
+    h4 {
+     font-size: 120%;
+     font-weight: 300;
+     margin: 15px;
+    }
 
 /* -----------------------
    HEADER
@@ -48,25 +59,50 @@
    LOCATION_BRIEF
    ----------------------- */
 
+/* outside container */
   .locationBrief {
     margin-top: 15px;
+    position: relative;
   }
 
+/* for each location */
   .briefItem {
-    padding: 10px 0;
+    padding: 5px 0;
+    background-color: rgba(94, 104, 247, 0.8);
+/*    background-color: rgba(248, 235, 73, 0.8);  */
+    border-radius: 5px;
+    height: 180px;
+    position: relative;
+    margin-top: 10px;
+    color: #363636
+    display:block;
+    vertical-align: top;
+
   }
 
-  .cityName button {
-    position: absolute;
-    bottom: 5px;
-    left: 15px;
-  }
-
-  .forecastItem,
+/* name of location*/
   .cityName {
-    height: 60px;
-  }
+    font-size: 160%;
+    font-weight: 300;
+    width: 20%;
+    display: inline-block;
+    padding-left: 5px;
+}
 
+/* for each day */
   .forecastItem {
     text-align: center;
+    width: 16%;
+    display: inline-block;
+  }
+
+  .briefItem button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .wi {
+    margin: 8px 0;
+    font-size: 200%;
   }

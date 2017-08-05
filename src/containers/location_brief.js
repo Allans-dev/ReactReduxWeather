@@ -31,13 +31,31 @@ class LocationBrief extends Component {
       }
     });
 
-    function displayIcon(weatherId) {
-      if (weatherId >= 200 && weatherId < 300) {
-        return ( <i className="wi wi-day-thunderstorm"></i> );
-      } else if (weatherId >= 500 && weatherId < 600) {
-        return ( <div><i className="wi wi-day-rain"></i><div/> );
-      } else { return ( <div>icon missing</div> ); }
-    }
+     function displayIcon(weatherId) {
+       if (weatherId >= 200 && weatherId < 300) {
+         return ( <i className="wi wi-day-thunderstorm"></i> );
+       } else if (weatherId >= 300 && weatherId < 400) {
+          return ( <i className="wi wi-day-sprinkle"></i> );
+       } else if (weatherId >= 500 && weatherId < 600) {
+          return ( <i className="wi wi-rain"></i> );
+       } else if (weatherId >= 600 && weatherId < 700) {
+          return ( <i className="wi wi-day-snow"></i> );
+       } else if (weatherId >= 700 && weatherId < 800) {
+          return ( <i className="wi wi-day-fog"></i> );
+       } else if (weatherId === 800 || (weatherId >= 951 && weatherId <= 953)) {
+          return ( <i className="wi wi-day-sunny"></i> );
+       } else if (weatherId >= 800 && weatherId < 810) {
+          return ( <i className="wi wi-cloudy"></i> );
+       } else if (weatherId >= 900 && weatherId < 910) {
+          return ( <i className="wi wi-storm-warning"></i> );
+       } else if (weatherId >= 954 && weatherId <= 959) {
+         return ( <i className="wi wi-strong-wind"></i> );
+       } else if (weatherId >= 960 && weatherId < 962) {
+         return ( <i className="wi wi-thunderstorm"></i> );
+       } else if (weatherId === 962) {
+         return ( <i className="wi wi-hurricane"></i> );
+       }
+     }
 
     // converting timestamp to weekday
     function weekDayFunction (date) {
@@ -47,18 +65,18 @@ class LocationBrief extends Component {
     }
 
     return (
-      <div key={locationId} className="row briefItem">
-        <div className="col-md-2 col-sm-2 cityName">
+      <div key={locationId} className="briefItem">
+        <div className="cityName">
           {locationName} <br />
-          <button
+        </div>
+        <button
             value={locationId}
             className="btn btn-danger btn-xs"
             onClick={this.handleClick}
           >X</button>
-        </div>
         {forecastArr.map(function(day){
           return (
-            <div key={day.dt_txt} className="col-md-2 col-sm-2 forecastItem">
+            <div key={day.dt_txt} className="forecastItem">
               {weekDayFunction(day.dt_txt)}
               <br />
               {displayIcon(day.weather[0].id)}
