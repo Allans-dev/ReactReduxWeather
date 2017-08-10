@@ -7,8 +7,11 @@ const weatherData = (state = [], action) => {
 
       // setState with new location data
       case 'FETCH_WEATHER':
-        return [action.payload.data, ...state];
-
+        if (typeof payload === 'string') {
+          return payload;
+        } else {
+            return [action.payload.data, ...state];
+          }
       // removes location data from weather object
       case 'DELETE_LOCATION':
         return state.filter(function (item, index){
