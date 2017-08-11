@@ -29,17 +29,22 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group searchBar">
-        <input
-          placeholder="Enter city for 5 day weather"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Search</button>
+      <div>
+        <form onSubmit={this.onFormSubmit} className="input-group searchBar">
+          <input
+            placeholder="Enter city for 5 day weather"
+            className="form-control"
+            value={this.state.term}
+            onChange={this.onInputChange}
+          />
+          <span className="input-group-btn">
+            <button type="submit" className="btn btn-secondary">Search</button>
+          </span>
+        </form>
+        <span className="error">
+         {this.props.errors}
         </span>
-      </form>
+      </div>
     );
   }
 }
@@ -48,8 +53,8 @@ function mapDispatchToProps (dispatch, ownProps) {
   return bindActionCreators({ fetchWeather }, dispatch);
 };
 
-function mapStateToProps ({ country }) {
-  return { country };
+function mapStateToProps ({ country, errors }) {
+  return { country, errors };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
