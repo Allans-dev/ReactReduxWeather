@@ -13,7 +13,6 @@ export function fetchWeather(city, country) {
   const errorMsg = 'Please check your spelling and try again';
   const request = axios.get(url).catch(function () {
     return errorMsg;
-    console.log(errorMsg);
   });
 
   return {
