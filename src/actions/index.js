@@ -1,5 +1,4 @@
 import axios from 'axios';
-import fetch from 'node-fetch';
 import { connect, dispatch } from 'react-redux';
 
 const API_KEY = 'a70166e768d349a3f6fe3921a4f6d313';
