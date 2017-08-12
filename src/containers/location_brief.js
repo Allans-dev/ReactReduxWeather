@@ -93,16 +93,20 @@ class LocationBrief extends Component {
           return (
             <div key={day.dt_txt} className="forecastItem">
               <div className="dayDate">
-              {weekDayFunction(day.dt_txt)}
+                {weekDayFunction(day.dt_txt)}
               </div>
               <div className="dateDate">
-              {weekDateFunction(day.dt_txt)}
+                {weekDateFunction(day.dt_txt)}
               </div>
-              {displayIcon(day.weather[0].id)}
-              <br />
-              {Math.round(day.main.temp)} &#8451;
-              <br />
-              {day.weather[0].description}
+              <div className="icon">
+                {displayIcon(day.weather[0].id)}
+              </div>
+              <div className="temp">
+                {Math.round(day.main.temp)} &#8451;
+              </div>
+              <div className="des">    
+                {day.weather[0].description}
+              </div>
             </div>
           );
         })}

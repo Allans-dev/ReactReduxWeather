@@ -126,4 +126,18 @@
 
   .dateDate {
     display: none;
+    margin-top: 20px;
   }
+
+  .icon {
+    margin-top: 10px;    
+  }
+
+  .temp {
+      margin-top: 10px;
+  }
+
+  .des {
+    display: block;
+    margin-top: 10px;
+  }    

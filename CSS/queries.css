@@ -39,6 +39,10 @@
     .forecastItem {
         width: 17.6%;
     }
+    
+    .des {
+        display: none;
+    }
   }
 
 @media only screen and (max-width: 768px) {
