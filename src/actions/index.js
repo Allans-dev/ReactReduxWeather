@@ -20,12 +20,6 @@ export function fetchWeather(city, country) {
   };
 }
 
-function mapDispatchToProps(dispatch, ownProps) {
-  return bindActionCreators({ fetchWeather }, dispatch);
-};
-
-export default connect(null, mapDispatchToProps)(fetchWeather);
-
   // fetch(url)
   //   .then((res) => res.json())
   //   .then(console.log(this))

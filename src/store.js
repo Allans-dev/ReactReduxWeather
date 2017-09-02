@@ -6,7 +6,7 @@ import promiseMiddleware from 'redux-promise';
 const middleware = applyMiddleware(promiseMiddleware);
 const initialState = {};
 
-export default initialState => (
+export default store => (
   createStore(
     rootReducer,
     initialState,
