@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { connect, dispatch } from 'react-redux';
 
 const API_KEY = 'a70166e768d349a3f6fe3921a4f6d313';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
